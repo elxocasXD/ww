@@ -1,3 +1,4 @@
+--UI
 
 
 local Kavo = {}
@@ -48,6 +49,8 @@ end
 function Utility:TweenObject(obj, properties, duration, ...)
     tween:Create(obj, tweeninfo(duration, ...), properties):Play()
 end
+
+
 
 
 local themes = {
@@ -122,61 +125,46 @@ local themeStyles = {
     ElementColor = Color3.fromRGB(32, 32, 38) --buttons
     },
 
-Sentinel2 = {
+
+
+    Red = {
     SchemeColor = Color3.fromRGB(230, 35, 69), --section
     Background = Color3.fromRGB(36, 37, 43), --fondo
     Header = Color3.fromRGB(28, 29, 34), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(32, 32, 38), --buttons
-
-    Rota = Color3.fromRGB(255, 100, 90),
-	Header2 = Color3.fromRGB(255,255,255)
+    ElementColor = Color3.fromRGB(32, 32, 38) --buttons
     },
 
-azulclaro = {
+Gamer = {
     SchemeColor = Color3.fromRGB(105, 66, 255), --section
     Background = Color3.fromRGB(26, 45, 121), --fondo
     Header = Color3.fromRGB(36, 66, 176), --tabs
     TextColor = Color3.fromRGB(14, 241, 249), --text
-    ElementColor = Color3.fromRGB(38, 66, 210), --buttons 
-
-
---Rota = Color3.fromRGB(36, 66, 176),
-	Rota = Color3.fromRGB(105, 19, 255),
-	Header2 = Color3.fromRGB(38, 66, 180)
+    ElementColor = Color3.fromRGB(38, 66, 177) --buttons 
     },
 
-Gris = {
+DarkV2 = {
     SchemeColor = Color3.fromRGB(75,75,75), --section
     Background = Color3.fromRGB(18,18,18), --fondo
     Header = Color3.fromRGB(35,35,35), --tabs
     TextColor = Color3.fromRGB(255, 255, 255), --text
-    ElementColor = Color3.fromRGB(25,25,25), --buttons
-
-	Rota = Color3.fromRGB(70,70,70),
-	Header2 = Color3.fromRGB(255,255,255)
+    ElementColor = Color3.fromRGB(25,25,25) --buttons
     },
 
-lila = {
+Twitch = {
 SchemeColor = Color3.fromRGB(85,40,215), --section
     Background = Color3.fromRGB(36, 37, 43), --fondo
     Header = Color3.fromRGB(28, 29, 34), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(32, 32, 38), --buttons
-
-	Rota = Color3.fromRGB(120,120,120),
-	Header2 = Color3.fromRGB(150,40,215)
+    ElementColor = Color3.fromRGB(32, 32, 38) --buttons
     },
 
-blue = {
+Water = {
 SchemeColor = Color3.fromRGB(61,136,240,255), --section
     Background = Color3.fromRGB(36, 37, 43), --fondo
     Header = Color3.fromRGB(28, 29, 34), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(32, 32, 38), --buttons
-
-	Rota = Color3.fromRGB(1,1,1),
-	Header2 = Color3.fromRGB(1,1,1)
+    ElementColor = Color3.fromRGB(32, 32, 38) --buttons
     },
 
 Discord = {
@@ -184,10 +172,7 @@ SchemeColor = Color3.fromRGB(63,135,251,255), --section
     Background = Color3.fromRGB(53,52,63,255), --fondo
     Header = Color3.fromRGB(49,48,54,255), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(67,66,76,255), --buttons
-
-	Rota = Color3.fromRGB(165,165,165),
-	Header2 = Color3.fromRGB(63,200,251) 
+    ElementColor = Color3.fromRGB(67,66,76,255) --buttons
     },
 
 Spotify = {
@@ -195,42 +180,76 @@ SchemeColor = Color3.fromRGB(28,185,89,255), --section
     Background = Color3.fromRGB(25,24,25,255), --fondo
     Header = Color3.fromRGB(19,18,19,255), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(40,40,40,255), --buttons
+    ElementColor = Color3.fromRGB(40,40,40,255) --buttons
+    },
 
-	
-
-	Rota = Color3.fromRGB(0,255,0),
-	Header2 = Color3.fromRGB(130,130,130)
-	    },
-
-
-
-
-arceusx = {
+ArceusX = {
 SchemeColor = Color3.fromRGB(254,0,0,255), --section
     Background = Color3.fromRGB(32,32,32,255), --fondo
     Header = Color3.fromRGB(26,26,26,255), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(40,40,40,255), --buttons
-
-
-	Rota = Color3.fromRGB(145,145,145),
-	Header2 = Color3.fromRGB(255,0,0)
+    ElementColor = Color3.fromRGB(40,40,40,255) --buttons
     },
-
 
 SynapseX = {
 SchemeColor = Color3.fromRGB(50,60,177,255), --section
     Background = Color3.fromRGB(34,35,34,255), --fondo
     Header = Color3.fromRGB(47,47,47,255), --tabs
     TextColor = Color3.fromRGB(255,255,255), --text
-    ElementColor = Color3.fromRGB(70,70,70,255), --buttons
+    ElementColor = Color3.fromRGB(70,70,70,255) --buttons
+    },
 
-	Rota = Color3.fromRGB(5,110,255),
-	Header2 = Color3.fromRGB(200,200,200)
+Purple = {
+SchemeColor = Color3.fromRGB(106,106,255,255), --section
+    Background = Color3.fromRGB(20,20,20), --fondo
+    Header = Color3.fromRGB(25,23,26,255), --tabs
+    TextColor = Color3.fromRGB(215,215,215), --text
+    ElementColor = Color3.fromRGB(24,24,24,255) --buttons
+    },
+
+Beautifull = {
+SchemeColor = Color3.fromRGB(140,206,100), --section
+    Background = Color3.fromRGB(49,49,59), --fondo
+    Header = Color3.fromRGB(40,40,48), --tabs
+    TextColor = Color3.fromRGB(255,255,255), --text
+    ElementColor = Color3.fromRGB(40,40,48) --buttons
+    },
+
+Sky = {
+SchemeColor = Color3.fromRGB(140,206,255), --section
+    Background = Color3.fromRGB(49,49,59), --fondo
+    Header = Color3.fromRGB(40,40,48), --tabs
+    TextColor = Color3.fromRGB(255,255,255), --text
+    ElementColor = Color3.fromRGB(40,40,48) --buttons
+    },
+
+Brick = {
+SchemeColor = Color3.fromRGB(251,111,83,255), --section
+    Background = Color3.fromRGB(45,48,53,255), --fondo
+    Header = Color3.fromRGB(35,38,43,255), --tabs
+    TextColor = Color3.fromRGB(255,255,255), --text
+    ElementColor = Color3.fromRGB(40,40,48,255) --buttons
+    },
+
+Turquoise = {
+SchemeColor = Color3.fromRGB(0,170,126), --section
+    Background = Color3.fromRGB(35,36,41), --fondo
+    Header = Color3.fromRGB(52,52,62), --tabs
+    TextColor = Color3.fromRGB(255,255,255), --text
+    ElementColor = Color3.fromRGB(40,40,48,255) --buttons
+    },
+
+OperaGx = {
+SchemeColor = Color3.fromRGB(179,0,67,255), --section
+    Background = Color3.fromRGB(33,35,47), --fondo
+    Header = Color3.fromRGB(30,30,45), --tabs
+    TextColor = Color3.fromRGB(255,255,255), --text
+    ElementColor = Color3.fromRGB(30,30,38) --buttons
     }
-
 }
+
+
+
 
 --Library
 
@@ -278,25 +297,36 @@ function Kavo.CreateLib(kavName, themeList)
         themeList = themeStyles.Serpent
 
 
-    elseif themeList == "Sentinel2" then
-        themeList = themeStyles.Sentinel2
-elseif themeList == "azulclaro" then
-        themeList = themeStyles.azulclaro
-elseif themeList == "Gris" then
-        themeList = themeStyles.Gris
-elseif themeList == "lila" then
-        themeList = themeStyles.lila
-elseif themeList == "blue" then
-        themeList = themeStyles.blue
+    elseif themeList == "Red" then
+        themeList = themeStyles.Red
+elseif themeList == "Gamer" then
+        themeList = themeStyles.Gamer
+elseif themeList == "DarkV2" then
+        themeList = themeStyles.DarkV2
+elseif themeList == "Twitch" then
+        themeList = themeStyles.Twitch
+elseif themeList == "Water" then
+        themeList = themeStyles.Water
 elseif themeList == "Discord" then
         themeList = themeStyles.Discord
 elseif themeList == "Spotify" then
-	    themeList = themeStyles.Spotify
-elseif themeList == "arceusx" then
-        themeList = themeStyles.arceusx
+        themeList = themeStyles.Spotify
+elseif themeList == "ArceusX" then
+        themeList = themeStyles.ArceusX
 elseif themeList == "SynapseX" then
         themeList = themeStyles.SynapseX
-
+elseif themeList == "Purple" then
+        themeList = themeStyles.Purple
+elseif themeList == "Beautifull" then
+        themeList = themeStyles.Beautifull
+elseif themeList == "Sky" then
+        themeList = themeStyles.Sky
+elseif themeList == "Brick" then
+        themeList = themeStyles.Brick
+elseif themeList == "Turquoise" then
+        themeList = themeStyles.Turquoise
+elseif themeList == "OperaGx" then
+        themeList = themeStyles.OperaGx									
     else
         if themeList.SchemeColor == nil then
             themeList.SchemeColor = Color3.fromRGB(74, 99, 135)
@@ -308,12 +338,9 @@ elseif themeList == "SynapseX" then
             themeList.TextColor = Color3.fromRGB(255,255,255)
         elseif themeList.ElementColor == nil then
             themeList.ElementColor = Color3.fromRGB(32, 32, 38)
-			        elseif themeList.Header2 == nil then
-            themeList.Header2 = Color3.fromRGB(32, 32, 38)
-			        elseif themeList.Rota == nil then
-            themeList.Rota = Color3.fromRGB(32, 32, 38)
         end
     end
+
 
 
 
@@ -363,7 +390,7 @@ elseif themeList == "SynapseX" then
     blurFrame.BackgroundTransparency = 1
     blurFrame.BorderSizePixel = 0
     blurFrame.Position = UDim2.new(-0.0222222228, 0, -0.0371747203, 0)
-    blurFrame.Size = UDim2.new(0, 376, 0, 289)
+    blurFrame.Size = UDim2.new(0, 410, 0, 289)
     blurFrame.ZIndex = 999
 
     ScreenGui.Parent = game.CoreGui
@@ -462,9 +489,9 @@ end)
 	
 	wait(0.5) 
 	
-	object:TweenSize(UDim2.new(0, 525, 0, 359))
+	object:TweenSize(UDim2.new(0, 565, 0, 359))
 --0, 525, 0, 318
-	
+	--0, 525, 0, 359
 
     MainCorner.CornerRadius = UDim.new(0, 6)
     MainCorner.Name = "MainCorner"
@@ -475,7 +502,7 @@ end)
     MainHeader.BackgroundColor3 = themeList.Header
 
     Objects[MainHeader] = "BackgroundColor3"
-    MainHeader.Size = UDim2.new(0, 525, 0, 42)
+    MainHeader.Size = UDim2.new(0, 564, 0, 42)
 
     headerCover.CornerRadius = UDim.new(0, 1)
     headerCover.Name = "headerCover"
@@ -535,20 +562,6 @@ ImageLabel.Image = "http://www.roblox.com/asset/?id=9664958625"
         ScreenGui:Destroy()
     end)
  
-top_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, themeList.Header2), ColorSequenceKeypoint.new(1.00, themeList.Rota)}
-top_2.Name = "top"
-top_2.Parent = MainHeader
-
-
-
-
-	local script = Instance.new('LocalScript', top_2)
-
-	game:GetService('RunService').RenderStepped:Connect(function()
-		script.Parent.Rotation = (tick() * 45) % 360;
-		end)
-
-
 
 
     MainSide.Name = "MainSide"
@@ -590,21 +603,11 @@ top_2.Parent = MainHeader
     pages.BackgroundTransparency = 1.000
     pages.BorderSizePixel = 0
     pages.Position = UDim2.new(0.299047589, 0, 0.112, 0)
-    pages.Size = UDim2.new(0, 360, 0, 309)
+    pages.Size = UDim2.new(0, 500, 0, 309)
 
     Pages.Name = "Pages"
     Pages.Parent = pages
 
-tab_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, themeList.Header2), ColorSequenceKeypoint.new(1.00, themeList.Rota )}
-tab_2.Name = "tab"
-tab_2.Parent = MainSide
-
-
-	local script = Instance.new('LocalScript', tab_2)
-
-	game:GetService('RunService').RenderStepped:Connect(function()
-		script.Parent.Rotation = (tick() * 26) % 360;
-		end)
 
 
 
@@ -672,10 +675,10 @@ tab_2.Parent = MainSide
         page.BackgroundColor3 = themeList.Background
         page.BorderSizePixel = 0
         page.Position = UDim2.new(0, 0, -0.00371747208, 0)
-        page.Size = UDim2.new(1, 0, 1, 0)
+        page.Size = UDim2.new(0, 395, 1, 0)
         page.ScrollBarThickness = 5
         page.Visible = false
-        page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
+        page.ScrollBarImageColor3 = themeList.Background
 
         pageListing.Name = "pageListing"
         pageListing.Parent = page
@@ -867,7 +870,7 @@ local NewTextBoxx = Instance.new("TextBox")
             sectionHead.Parent = sectionFrame
             sectionHead.BackgroundColor3 = themeList.SchemeColor
             Objects[sectionHead] = "BackgroundColor3"
-            sectionHead.Size = UDim2.new(0, 352, 0, 33)
+            sectionHead.Size = UDim2.new(0, 388, 0, 33)
 
             sHeadCorner.CornerRadius = UDim.new(0, 4)
             sHeadCorner.Name = "sHeadCorner"
@@ -920,7 +923,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 local innerSc = sectionElListing.AbsoluteContentSize
                 sectionInners.Size = UDim2.new(1, 0, 0, innerSc.Y)
                 local frameSc = sectionlistoknvm.AbsoluteContentSize
-                sectionFrame.Size = UDim2.new(0, 352, 0, frameSc.Y)
+                sectionFrame.Size = UDim2.new(0, 388, 0, frameSc.Y)
             end
                 updateSectionFrame()
                 UpdateSize()
@@ -945,7 +948,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 buttonElement.Parent = sectionInners
                 buttonElement.BackgroundColor3 = themeList.ElementColor
                 buttonElement.ClipsDescendants = true
-                buttonElement.Size = UDim2.new(0, 352, 0, 33)
+                buttonElement.Size = UDim2.new(0, 382, 0, 33)
                 buttonElement.AutoButtonColor = false
                 buttonElement.Font = Enum.Font.SourceSans
                 buttonElement.Text = ""
@@ -1144,7 +1147,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 textboxElement.Parent = sectionInners
                 textboxElement.BackgroundColor3 = themeList.ElementColor
                 textboxElement.ClipsDescendants = true
-                textboxElement.Size = UDim2.new(0, 352, 0, 33)
+                textboxElement.Size = UDim2.new(0, 382, 0, 33)
                 textboxElement.AutoButtonColor = false
                 textboxElement.Font = Enum.Font.SourceSans
                 textboxElement.Text = ""
@@ -1344,7 +1347,7 @@ local NewTextBoxx = Instance.new("TextBox")
                     toggleElement.Parent = sectionInners
                     toggleElement.BackgroundColor3 = themeList.ElementColor
                     toggleElement.ClipsDescendants = true
-                    toggleElement.Size = UDim2.new(0, 352, 0, 33)
+                    toggleElement.Size = UDim2.new(0, 382, 0, 33)
                     toggleElement.AutoButtonColor = false
                     toggleElement.Font = Enum.Font.SourceSans
                     toggleElement.Text = ""
@@ -1597,7 +1600,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 sliderElement.Parent = sectionInners
                 sliderElement.BackgroundColor3 = themeList.ElementColor
                 sliderElement.ClipsDescendants = true
-                sliderElement.Size = UDim2.new(0, 352, 0, 33)
+                sliderElement.Size = UDim2.new(0, 382, 0, 33)
                 sliderElement.AutoButtonColor = false
                 sliderElement.Font = Enum.Font.SourceSans
                 sliderElement.Text = ""
@@ -1851,14 +1854,14 @@ local NewTextBoxx = Instance.new("TextBox")
                 dropFrame.BackgroundColor3 = themeList.Background
                 dropFrame.BorderSizePixel = 0
                 dropFrame.Position = UDim2.new(0, 0, 1.23571432, 0)
-                dropFrame.Size = UDim2.new(0, 352, 0, 33)
+                dropFrame.Size = UDim2.new(0, 382, 0, 33)
                 dropFrame.ClipsDescendants = true
                 local sample = Sample
                 local btn = dropOpen
                 dropOpen.Name = "dropOpen"
                 dropOpen.Parent = dropFrame
                 dropOpen.BackgroundColor3 = themeList.ElementColor
-                dropOpen.Size = UDim2.new(0, 352, 0, 33)
+                dropOpen.Size = UDim2.new(0, 382, 0, 33)
                 dropOpen.AutoButtonColor = false
                 dropOpen.Font = Enum.Font.SourceSans
                 dropOpen.Text = ""
@@ -1869,7 +1872,7 @@ local NewTextBoxx = Instance.new("TextBox")
                     if not focusing then
                         if opened then
                             opened = false
-                            dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
+                            dropFrame:TweenSize(UDim2.new(0, 382, 0, 33), "InOut", "Linear", 0.08)
                             wait(0.1)
                             updateSectionFrame()
                             UpdateSize()
@@ -1891,7 +1894,7 @@ local NewTextBoxx = Instance.new("TextBox")
                             c:Destroy()
                         else
                             opened = true
-                            dropFrame:TweenSize(UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
+                            dropFrame:TweenSize(UDim2.new(0, 382, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
                             wait(0.1)
                             updateSectionFrame()
                             UpdateSize()
@@ -2080,7 +2083,7 @@ local NewTextBoxx = Instance.new("TextBox")
                     optionSelect.Parent = dropFrame
                     optionSelect.BackgroundColor3 = themeList.ElementColor
                     optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                    optionSelect.Size = UDim2.new(0, 352, 0, 33)
+                    optionSelect.Size = UDim2.new(0, 382, 0, 33)
                     optionSelect.AutoButtonColor = false
                     optionSelect.Font = Enum.Font.GothamSemibold
                     optionSelect.Text = "  "..v
@@ -2093,7 +2096,7 @@ local NewTextBoxx = Instance.new("TextBox")
                             opened = false
                             callback(v)
                             itemTextbox.Text = v
-                            dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), 'InOut', 'Linear', 0.08)
+                            dropFrame:TweenSize(UDim2.new(0, 382, 0, 33), 'InOut', 'Linear', 0.08)
                             wait(0.1)
                             updateSectionFrame()
                             UpdateSize()
@@ -2179,7 +2182,7 @@ local NewTextBoxx = Instance.new("TextBox")
                         optionSelect.Parent = dropFrame
                         optionSelect.BackgroundColor3 = themeList.ElementColor
                         optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                        optionSelect.Size = UDim2.new(0, 352, 0, 33)
+                        optionSelect.Size = UDim2.new(0, 382, 0, 33)
                         optionSelect.AutoButtonColor = false
                         optionSelect.Font = Enum.Font.GothamSemibold
                         optionSelect.Text = "  "..v
@@ -2194,7 +2197,7 @@ local NewTextBoxx = Instance.new("TextBox")
                                 opened = false
                                 callback(v)
                                 itemTextbox.Text = v
-                                dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), 'InOut', 'Linear', 0.08)
+                                dropFrame:TweenSize(UDim2.new(0, 382, 0, 33), 'InOut', 'Linear', 0.08)
                                 wait(0.1)
                                 updateSectionFrame()
                                 UpdateSize()
@@ -2252,12 +2255,12 @@ local NewTextBoxx = Instance.new("TextBox")
                         end)()
                     end
                     if opened then 
-                        dropFrame:TweenSize(UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
+                        dropFrame:TweenSize(UDim2.new(0, 382, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)
                         wait(0.1)
                         updateSectionFrame()
                         UpdateSize()
                     else
-                        dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
+                        dropFrame:TweenSize(UDim2.new(0, 382, 0, 33), "InOut", "Linear", 0.08)
                         wait(0.1)
                         updateSectionFrame()
                         UpdateSize()
@@ -2291,7 +2294,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 keybindElement.Parent = sectionInners
                 keybindElement.BackgroundColor3 = themeList.ElementColor
                 keybindElement.ClipsDescendants = true
-                keybindElement.Size = UDim2.new(0, 352, 0, 33)
+                keybindElement.Size = UDim2.new(0, 382, 0, 33)
                 keybindElement.AutoButtonColor = false
                 keybindElement.Font = Enum.Font.SourceSans
                 keybindElement.Text = ""
@@ -2527,7 +2530,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 colorElement.BackgroundTransparency = 1.000
                 colorElement.ClipsDescendants = true
                 colorElement.Position = UDim2.new(0, 0, 0.566834569, 0)
-                colorElement.Size = UDim2.new(0, 352, 0, 33)
+                colorElement.Size = UDim2.new(0, 382, 0, 33)
                 colorElement.AutoButtonColor = false
                 colorElement.Font = Enum.Font.SourceSans
                 colorElement.Text = ""
@@ -2537,7 +2540,7 @@ local NewTextBoxx = Instance.new("TextBox")
                     if not focusing then
                         if colorOpened then
                             colorOpened = false
-                            colorElement:TweenSize(UDim2.new(0, 352, 0, 33), "InOut", "Linear", 0.08)
+                            colorElement:TweenSize(UDim2.new(0, 382, 0, 33), "InOut", "Linear", 0.08)
                             wait(0.1)
                             updateSectionFrame()
                             UpdateSize()
@@ -2559,7 +2562,7 @@ local NewTextBoxx = Instance.new("TextBox")
                             c:Destroy()
                         else
                             colorOpened = true
-                            colorElement:TweenSize(UDim2.new(0, 352, 0, 141), "InOut", "Linear", 0.08, true)
+                            colorElement:TweenSize(UDim2.new(0, 382, 0, 141), "InOut", "Linear", 0.08, true)
                             wait(0.1)
                             updateSectionFrame()
                             UpdateSize()
@@ -2594,7 +2597,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 colorHeader.Name = "colorHeader"
                 colorHeader.Parent = colorElement
                 colorHeader.BackgroundColor3 = themeList.ElementColor
-                colorHeader.Size = UDim2.new(0, 352, 0, 33)
+                colorHeader.Size = UDim2.new(0, 382, 0, 33)
                 colorHeader.ClipsDescendants = true
 
                 UICorner_2.CornerRadius = UDim.new(0, 4)
@@ -2693,7 +2696,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 colorInners.Parent = colorElement
                 colorInners.BackgroundColor3 = themeList.ElementColor
                 colorInners.Position = UDim2.new(0, 0, 0.255319148, 0)
-                colorInners.Size = UDim2.new(0, 352, 0, 105)
+                colorInners.Size = UDim2.new(0, 382, 0, 105)
 
                 UICorner_4.CornerRadius = UDim.new(0, 4)
                 UICorner_4.Parent = colorInners
@@ -2959,7 +2962,7 @@ local NewTextBoxx = Instance.new("TextBox")
             	label.BorderSizePixel = 0
 				label.ClipsDescendants = true
             	label.Text = title
-           		label.Size = UDim2.new(0, 352, 0, 33)
+           		label.Size = UDim2.new(0, 382, 0, 33)
 	            label.Font = Enum.Font.Gotham
 	            label.Text = "  "..title
 	            label.RichText = true
