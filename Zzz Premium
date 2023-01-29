@@ -378,6 +378,7 @@ elseif themeList == "OperaGx" then
     local tab_2 = Instance.new("UIGradient")
     local ImageLabel = Instance.new("ImageLabel")
 
+
 		
 		
     local blurFrame = Instance.new("Frame")
@@ -405,6 +406,36 @@ elseif themeList == "OperaGx" then
     Main.ClipsDescendants = true
     Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
     Main.Size = UDim2.new(0, 0, 0, 0)
+
+
+
+local FrameW = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+
+FrameW.Parent = game.CoreGui[LibName]
+FrameW.BackgroundColor3 = themeList.SchemeColor
+FrameW.BackgroundTransparency = 1.00
+FrameW.Position = UDim2.new(0.538583934, 0, 0.182044894, 0)
+FrameW.Size = UDim2.new(0, 120, 0, 120)
+FrameW.Visible = false
+
+local ImageButtonx = Instance.new("ImageButton")
+ImageButtonx.Parent = FrameW
+ImageButtonx.BackgroundColor3 = themeList.SchemeColor
+ImageButtonx.BackgroundTransparency = 0.000
+ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
+ImageButtonx.Size = UDim2.new(0, 89, 0, 93)
+ImageButtonx.Image = "http://www.roblox.com/asset/?id=9664958625"
+ImageButtonx.Active = true
+ImageButtonx.Draggable = true
+ImageButtonx.MouseButton1Click:Connect(function()
+game.CoreGui[LibName].Main.Visible = true
+game.CoreGui[LibName].Frame.Visible = false
+		end)
+
+
+UICorner.CornerRadius = UDim.new(0, 50)
+UICorner.Parent = ImageButtonx
 
 
 
@@ -562,6 +593,25 @@ ImageLabel.Image = "http://www.roblox.com/asset/?id=9664958625"
         ScreenGui:Destroy()
     end)
  
+
+
+local mm = Instance.new("TextButton")
+mm.Parent = MainHeader
+mm.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mm.BackgroundTransparency = 1.000
+mm.Position = UDim2.new(0.88, 0, -0.30, 0)
+mm.Size = UDim2.new(0, 35, 0, 50)
+mm.Font = Enum.Font.SourceSans
+mm.Text = "-"
+mm.TextColor3 = Color3.fromRGB(200,200,200)
+mm.TextScaled = true
+mm.TextSize = 14.000
+mm.TextWrapped = true
+mm.MouseButton1Click:Connect(function()
+game.CoreGui[LibName].Main.Visible = false
+game.CoreGui[LibName].Frame.Visible = true
+    end)
+
 
 
     MainSide.Name = "MainSide"
@@ -3005,3 +3055,4 @@ local NewTextBoxx = Instance.new("TextBox")
 end
 
 return Kavo
+  
