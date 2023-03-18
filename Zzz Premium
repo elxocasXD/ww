@@ -1,4 +1,7 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/scripts/main/Status.lua"))()
 
+if getgenv().UI_Library_Premium_Enable == true then
+	getgenv().Library_Premium_Name = "Trip Hub Premium"
 local Kavo = {}
 
 local tween = game:GetService("TweenService")
@@ -259,7 +262,7 @@ local SettingsT = {
 
 
 
-local LibName = "Trip Hub Premiun"
+local LibName = getgenv().Library_Premium_Name
 
 function Kavo:ToggleUI()
     if game.CoreGui[LibName].Enabled then
@@ -347,12 +350,6 @@ elseif themeList == "OperaGx" then
 
 
 
-
-
-
-
-
-
     themeList = themeList or {}
     local selectedTab 
     kavName = kavName or "Library"
@@ -373,15 +370,11 @@ elseif themeList == "OperaGx" then
     local MainSide = Instance.new("Frame")
     local sideCorner = Instance.new("UICorner")
     local coverup_2 = Instance.new("Frame")
-    local tabFrames = Instance.new("Frame")
+    local tabFrames = Instance.new("ScrollingFrame")
     local tabListing = Instance.new("UIListLayout")
     local pages = Instance.new("Frame")
     local Pages = Instance.new("Folder")
     local infoContainer = Instance.new("Frame")
-    local top_2 = Instance.new("UIGradient")
-    local tab_2 = Instance.new("UIGradient")
-    local ImageLabel = Instance.new("ImageLabel")
-
 
 		
 		
@@ -409,40 +402,8 @@ elseif themeList == "OperaGx" then
     Main.BackgroundColor3 = themeList.Background
     Main.ClipsDescendants = true
     Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
-    Main.Size = UDim2.new(0, 565, 0, 359)
+    Main.Size = UDim2.new(0, 610, 0, 359)
     Main.Visible = true
-
-
-local FrameW = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-
-FrameW.Parent = game.CoreGui[LibName]
-FrameW.BackgroundColor3 = themeList.SchemeColor
-FrameW.BackgroundTransparency = 1.00
-FrameW.Position = UDim2.new(0.538583934, 0, 0.182044894, 0)
-FrameW.Size = UDim2.new(0, 120, 0, 120)
-FrameW.Visible = false
-
-local ImageButtonx = Instance.new("ImageButton")
-ImageButtonx.Parent = FrameW
-ImageButtonx.BackgroundColor3 = themeList.SchemeColor
-ImageButtonx.BackgroundTransparency = 0.000
-ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
-ImageButtonx.Size = UDim2.new(0, 89, 0, 93)
-ImageButtonx.Image = "http://www.roblox.com/asset/?id=9664958625"
-ImageButtonx.Active = true
-ImageButtonx.Draggable = true
-ImageButtonx.MouseButton1Click:Connect(function()
-game.CoreGui[LibName].Main.Visible = true
-game.CoreGui[LibName].Frame.Visible = false
-		end)
-
-
-UICorner.CornerRadius = UDim.new(0, 50)
-UICorner.Parent = ImageButtonx
-
-
-
 
 local UserInputService = game:GetService("UserInputService")
 local dragging
@@ -519,38 +480,29 @@ end)
     MainHeader.BackgroundColor3 = themeList.Header
 
     Objects[MainHeader] = "BackgroundColor3"
-    MainHeader.Size = UDim2.new(0, 564, 0, 42)
+    MainHeader.Size = UDim2.new(0, 610, 0, 40)
 
     headerCover.CornerRadius = UDim.new(0, 1)
     headerCover.Name = "headerCover"
     headerCover.Parent = MainHeader
 
-
-ImageLabel.Parent = MainHeader
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 5.000
-ImageLabel.Position = UDim2.new(0.459047616, 0, -0.119149888, 0)
-ImageLabel.Size = UDim2.new(0, 42, 0, 40)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=9664958625"
-
-
-
-    coverup.Name = "coverup"
-    coverup.Parent = MainHeader
-    coverup.BackgroundColor3 = themeList.Header
-    Objects[coverup] = "BackgroundColor3"
-    coverup.BorderSizePixel = 0
-    coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
-    coverup.Size = UDim2.new(0, 525, 0, 7)
+local Logo = Instance.new("ImageLabel")
+    Logo.Parent = MainHeader
+	Logo.Name = "Logo"
+    Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Logo.BackgroundTransparency = 5.000
+    Logo.Position = UDim2.new(0, 305, 0, -5)
+    Logo.Size = UDim2.new(0, 50, 0, 50)
+    Logo.Image = "http://www.roblox.com/asset/?id=12756283803"
 
     title.Name = "title"
     title.Parent = MainHeader
     title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     title.BackgroundTransparency = 1.000
     title.BorderSizePixel = 0
-    title.Position = UDim2.new(0.0171428565, 0, 0.344827592, 0)
-    title.Size = UDim2.new(0, 204, 0, 8)
-    title.Font = Enum.Font.Gotham
+    title.Position = UDim2.new(0, 25, 0, 15)
+    title.Size = UDim2.new(0, 25, 0, 10)
+    title.Font = Enum.Font.GothamBold
     title.RichText = true
     title.Text = kavName
     title.TextColor3 = Color3.fromRGB(245, 245, 245)
@@ -560,43 +512,94 @@ ImageLabel.Image = "http://www.roblox.com/asset/?id=9664958625"
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
-    close.Position = UDim2.new(0.949999988, 0, 0.137999997, 0)
+    close.Position = UDim2.new(0.949999988, 0, 0.2, 0)
     close.Size = UDim2.new(0, 21, 0, 21)
     close.ZIndex = 2
     close.Image = "rbxassetid://3926305904"
     close.ImageRectOffset = Vector2.new(284, 4)
     close.ImageRectSize = Vector2.new(24, 24)
-    close.MouseButton1Click:Connect(function()
+     close.MouseButton1Click:Connect(function()
+        game.TweenService:Create(close, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            ImageTransparency = 1 }):Play()
+        wait(0.5)
+        game.TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0,0,0,0),
+			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		}):Play()
+        wait(2)
         ScreenGui:Destroy()
     end)
- 
 
 
 local mm = Instance.new("TextButton")
 mm.Parent = MainHeader
+mm.Name = "Minimize"
 mm.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mm.BackgroundTransparency = 1.000
-mm.Position = UDim2.new(0.88, 0, -0.30, 0)
-mm.Size = UDim2.new(0, 35, 0, 50)
+mm.Position = UDim2.new(0, 550, 0, 8)
+mm.Size = UDim2.new(0, 21, 0, 21)
 mm.Font = Enum.Font.SourceSans
 mm.Text = "-"
 mm.TextColor3 = Color3.fromRGB(200,200,200)
-mm.TextScaled = true
-mm.TextSize = 14.000
+--mm.TextScaled = true
+mm.TextSize = 50.000
 mm.TextWrapped = true
-mm.MouseButton1Click:Connect(function()
-game.CoreGui[LibName].Main.Visible = false
+     mm.MouseButton1Click:Connect(function()
+	 getgenv().Kavo_OldPosition = game.CoreGui[LibName].Main.Position
+        game.TweenService:Create(mm, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+        Transparency = 1 }):Play()
+        wait(0.5)
+        game.TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Size = UDim2.new(0,0,0,0),
+			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
+		}):Play()
+		wait(0.4)
+Main.Visible = false
 game.CoreGui[LibName].Frame.Visible = true
     end)
 
+
+local FrameW = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+
+FrameW.Parent = game.CoreGui[LibName]
+FrameW.BackgroundColor3 = themeList.Header
+FrameW.BackgroundTransparency = 1.00
+FrameW.Position = Main.Position
+FrameW.Size = UDim2.new(0, 120, 0, 120)
+FrameW.Visible = false
+
+local ImageButtonx = Instance.new("ImageButton")
+ImageButtonx.Parent = FrameW
+ImageButtonx.BackgroundColor3 = themeList.Header
+ImageButtonx.BackgroundTransparency = 0.000
+ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
+ImageButtonx.Size = UDim2.new(0, 100, 0, 100)
+ImageButtonx.Image = "http://www.roblox.com/asset/?id=12756283803"
+ImageButtonx.Active = true
+ImageButtonx.Draggable = true
+ImageButtonx.MouseButton1Click:Connect(function()
+game.CoreGui[LibName].Frame.Visible = false
+Main.Visible = true
+        game.TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0, 610, 0, 359),
+		Position = getgenv().Kavo_OldPosition
+		}):Play()
+game.CoreGui[LibName].Main.MainHeader.Minimize.Transparency = 0
+game.CoreGui[LibName].Main.MainHeader.Minimize.BackgroundTransparency = 1
+		end)
+
+
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = ImageButtonx
 
 
     MainSide.Name = "MainSide"
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
-    MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0.0911949649, 0)
-    MainSide.Size = UDim2.new(0, 158, 0, 326)
+    MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0, 40)
+    MainSide.Size = UDim2.new(0, 180, 0, 326)
 --158
 
 
@@ -618,7 +621,20 @@ game.CoreGui[LibName].Frame.Visible = true
     tabFrames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     tabFrames.BackgroundTransparency = 1.000
     tabFrames.Position = UDim2.new(0.0438990258, 0, -0.00066378375, 0)
-    tabFrames.Size = UDim2.new(0, 135, 0, 383)
+    tabFrames.Size = UDim2.new(0, 180, 0, 310)
+	tabFrames.BorderColor3 = themeList.Header
+    tabFrames.ScrollBarImageColor3 = themeList.SchemeColor
+	tabFrames.ScrollBarThickness = 5
+
+        local function UpdateSize()
+            local cS = tabListing.AbsoluteContentSize
+            game.TweenService:Create(tabFrames, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {CanvasSize = UDim2.new(0,cS.X,0,cS.Y * 1.1)}):Play()
+        end
+
+        UpdateSize()
+        tabFrames.ChildAdded:Connect(UpdateSize)
+        tabFrames.ChildRemoved:Connect(UpdateSize)
+
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames
@@ -629,15 +645,11 @@ game.CoreGui[LibName].Frame.Visible = true
     pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     pages.BackgroundTransparency = 1.000
     pages.BorderSizePixel = 0
-    pages.Position = UDim2.new(0.299047589, 0, 0.112, 0)
+    pages.Position = UDim2.new(0.33, 0, 0.13, 0)
     pages.Size = UDim2.new(0, 500, 0, 309)
 
     Pages.Name = "Pages"
     Pages.Parent = pages
-
-
-
-
 	
 
     infoContainer.Name = "infoContainer"
@@ -647,7 +659,7 @@ game.CoreGui[LibName].Frame.Visible = true
     infoContainer.BorderColor3 = Color3.fromRGB(27, 42, 53)
     infoContainer.ClipsDescendants = true
     infoContainer.Position = UDim2.new(0.299047619, 0, 0.874213815, 0)
-    infoContainer.Size = UDim2.new(0, 368, 0, 33)
+    infoContainer.Size = UDim2.new(0, 380, 0, 50)
 
  
     coroutine.wrap(function()
@@ -660,8 +672,6 @@ game.CoreGui[LibName].Frame.Visible = true
         end
     end)()
 	
-
-
 
 
     function Kavo:ChangeColor(prope,color)
@@ -690,11 +700,12 @@ game.CoreGui[LibName].Frame.Visible = true
 
         local function UpdateSize()
             local cS = pageListing.AbsoluteContentSize
-
-            game.TweenService:Create(page, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                CanvasSize = UDim2.new(0,cS.X,0,cS.Y)
-            }):Play()
+            game.TweenService:Create(page, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {CanvasSize = UDim2.new(0,cS.X,0,cS.Y)}):Play()
         end
+
+        UpdateSize()
+        page.ChildAdded:Connect(UpdateSize)
+        page.ChildRemoved:Connect(UpdateSize)
 
         page.Name = tabName
         page.Parent = Pages
@@ -716,7 +727,7 @@ game.CoreGui[LibName].Frame.Visible = true
         tabButton.Parent = tabFrames
         tabButton.BackgroundColor3 = themeList.SchemeColor
         Objects[tabButton] = "SchemeColor"
-        tabButton.Size = UDim2.new(0, 135, 0, 28)
+        tabButton.Size = UDim2.new(0, 165, 0, 28)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
@@ -787,20 +798,19 @@ game.CoreGui[LibName].Frame.Visible = true
     local IconLibraryID = "rbxassetid://3926305904"
     local Level = 1
 
-
-	local NewSearchIcon = Instance.new("ImageButton" or "ImageLabel")
+	local NewSearchIcon = Instance.new("ImageLabel")
 	NewSearchIcon.Name = "SearchIcon"
-	NewSearchIcon.BackgroundTransparency = 0
-	NewSearchIcon.Image = "rbxassetid://3926305904"
+	NewSearchIcon.BackgroundTransparency = 4
+	NewSearchIcon.Image = "http://www.roblox.com/asset/?id=3926305904"
 	NewSearchIcon.ImageRectOffset = Vector2.new(964,324)
 	NewSearchIcon.ImageRectSize = Vector2.new(36,36)
 	NewSearchIcon.Size = UDim2.new(0,16,0,16)
 	NewSearchIcon.Position = UDim2.new(0,2,0,2)
 	NewSearchIcon.ZIndex = Level
 
-	local NewRoundBox = Instance.new("ImageButton" or "ImageLabel")
+	local NewRoundBox = Instance.new("ImageLabel")
 	NewRoundBox.BackgroundTransparency = 5
-	NewRoundBox.Image = "rbxassetid://3570695787"
+	NewRoundBox.Image = "http://www.roblox.com/asset/?id=3570695787"
 	NewRoundBox.SliceCenter = Rect.new(100,100,100,100)
 	NewRoundBox.SliceScale = math.clamp((CornerRadius or 5) * 0.01, 0.01, 1)
 	NewRoundBox.ScaleType = Enum.ScaleType.Slice
@@ -813,7 +823,7 @@ local NewTextBoxx = Instance.new("TextBox")
 	NewTextBoxx.TextColor3 = Color3.fromRGB(255,255,255)
 	NewTextBoxx.BackgroundTransparency = 1
 	NewTextBoxx.TextSize = 12
-	NewTextBoxx.Size = UDim2.new(1,0,1,0)
+	NewTextBoxx.Size = UDim2.new(0,300,1,0)
 	NewTextBoxx.ZIndex = 1
 		
 			
@@ -827,9 +837,9 @@ local NewTextBoxx = Instance.new("TextBox")
 			local SearchBox = NewTextBoxx
 			SearchBox.Name = "SearchInput"
 			SearchBox.Position = UDim2.new(0,20,0,0)
-			SearchBox.Size = UDim2.new(1,-20,1,0)
+			SearchBox.Size = UDim2.new(0,300,1,0)
 			SearchBox.TextTransparency = 0.5
-			SearchBox.TextXAlignment = Enum.TextXAlignment.Left
+			SearchBox.TextXAlignment = Enum.TextXAlignment.Center
 			SearchBox.Parent = SearchBarContainer
 			
 	
@@ -897,7 +907,7 @@ local NewTextBoxx = Instance.new("TextBox")
             sectionHead.Parent = sectionFrame
             sectionHead.BackgroundColor3 = themeList.SchemeColor
             Objects[sectionHead] = "BackgroundColor3"
-            sectionHead.Size = UDim2.new(0, 388, 0, 33)
+            sectionHead.Size = UDim2.new(0, 383, 0, 33)
 
             sHeadCorner.CornerRadius = UDim.new(0, 4)
             sHeadCorner.Name = "sHeadCorner"
@@ -1014,8 +1024,8 @@ local NewTextBoxx = Instance.new("TextBox")
                 moreInfo.Name = "TipMore"
                 moreInfo.Parent = infoContainer
                 moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
-                moreInfo.Position = UDim2.new(0, 0, 2, 0)
-                moreInfo.Size = UDim2.new(0, 353, 0, 33)
+                moreInfo.Position = UDim2.new(0, 0, 50, 20)
+                moreInfo.Size = UDim2.new(0, 430, 0, 33)
                 moreInfo.ZIndex = 9
                 moreInfo.Font = Enum.Font.GothamSemibold
                 moreInfo.Text = "  "..tipINf
@@ -1026,7 +1036,7 @@ local NewTextBoxx = Instance.new("TextBox")
                 moreInfo.TextXAlignment = Enum.TextXAlignment.Left
                 Objects[moreInfo] = "BackgroundColor3"
 
-                UICorner.CornerRadius = UDim.new(0, 4)
+                UICorner.CornerRadius = UDim.new(0, 10)
                 UICorner.Parent = moreInfo
 
                 touch.Name = "touch"
@@ -3032,4 +3042,6 @@ local NewTextBoxx = Instance.new("TextBox")
 end
 
 return Kavo
-  
+
+
+end  --Premium Status
