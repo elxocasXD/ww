@@ -201,11 +201,11 @@ SchemeColor = Color3.fromRGB(50,60,177,255), --section
     },
 
 Purple = {
-SchemeColor = Color3.fromRGB(106,106,255,255), --section
-    Background = Color3.fromRGB(20,20,20), --fondo
-    Header = Color3.fromRGB(25,23,26,255), --tabs
+SchemeColor = Color3.fromRGB(100,70,255), --section 100,70,255
+    Background = Color3.fromRGB(22,22,22), --fondo
+    Header = Color3.fromRGB(25,23,26), --tabs 27,25,25
     TextColor = Color3.fromRGB(215,215,215), --text
-    ElementColor = Color3.fromRGB(24,24,24,255) --buttons
+    ElementColor = Color3.fromRGB(26,26,30) --buttons
     },
 
 Beautifull = {
