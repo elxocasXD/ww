@@ -1,5 +1,3 @@
---Credits to AbstractPoo
-
 local rs = game:GetService("RunService")
 local ts = game:GetService("TweenService")
 
@@ -50,14 +48,9 @@ local function object(class, properties)
 	})
 end
 
---[[if not ((rs:IsStudio() and game.Players.LocalPlayer.PlayerGui) or game.CoreGui):FindFirstChild("Abstract Notifications") then
-
-end]]
-
 local gui = object("ScreenGui", {
 	Parent = (rs:IsStudio() and game.Players.LocalPlayer.PlayerGui) or game.CoreGui
 })
-
 local notifications = {
 	theme = "dark",
 	colorSchemes = {
@@ -66,9 +59,10 @@ local notifications = {
 			Secondary = Color3.fromRGB(30, 30, 35),
 			Icon = Color3.fromRGB(255, 255, 255),
 			Text = Color3.fromRGB(255, 255, 255),
-			SecondaryText = Color3.fromRGB(200, 200, 200),
+			SecondaryText = Color3.fromRGB(255, 255, 255),
 			Accept = Color3.fromRGB(60, 40, 200),
-			Dismiss = Color3.fromRGB(60, 60, 65)
+			Dismiss = Color3.fromRGB(60, 60, 65),
+			Iconrbx = "rbxassetid://6031071053"
 		}
 	},
 	closeOpened = nil
@@ -85,6 +79,22 @@ function notifications:notify(options)
 		self.closeOpened()
 	end
 
+if options.Color then
+if options.Color == "Green" then
+notifications.colorSchemes.dark.Main = Color3.fromRGB(70, 215, 70)
+notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253415755" 
+elseif options.Color == "Red" then
+notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 70, 70) 
+notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253418592"
+elseif options.Color == "Yellow" then
+notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 215, 70) 
+notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253417116"
+else
+notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45) 
+notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
+end
+end
+
 	local mainFrame = gui:object("Frame", {
 		Size = UDim2.fromOffset(400, (callbacksBool and 100) or 56),
 		Position = UDim2.new(1, -20, 1, -10),
@@ -100,7 +110,7 @@ function notifications:notify(options)
 	})
 
 	local icon = content:object("ImageLabel", {
-		Image = (options.Icon and ("rbxassetid://" .. tostring(options.Icon))) or "rbxassetid://6031071053",
+		Image = notifications.colorSchemes.dark.Iconrbx,
 		BackgroundTransparency = 1,
 		ImageColor3 = theme.Icon,
 		AnchorPoint = Vector2.new(0, 0.5),
@@ -111,7 +121,7 @@ function notifications:notify(options)
 
 	local title = content:object("TextLabel", {
 		TextColor3 = theme.Text,
-		Font = Enum.Font.SourceSansSemibold,
+		Font = Enum.Font.ArialBold,
 		TextSize = 18,
 		Position = UDim2.fromOffset(60, 10),
 		Size = UDim2.new(1, -70, 0, 18),
@@ -121,6 +131,8 @@ function notifications:notify(options)
 		RichText = true,
 		TextTransparency = 1 --
 	})
+
+
 
 	local description; if options.Description then
 		description = content:object("TextLabel", {
@@ -272,5 +284,6 @@ end
 function notifications:message(options)
 	self:notify(options)
 end
+
 
 return notifications
