@@ -4,6 +4,13 @@ if getgenv().UI_Library_Free_Enable == true then
 	getgenv().Library_Free_Name = "Trip Hub"
 local Kavo = {}
 
+local notificationss = loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/ww/main/nwnwnwwnwnnwwnwnwnnwnwnwnnwnwnwn'))()
+function Notify(Title,Description,Color,Length)
+notificationss:notify{Title = Title, Description = Description,Icon = "",Color = Color,Length = Length}
+end
+
+
+
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
@@ -421,16 +428,6 @@ local startPos
 
 local fr = Main
 
-local function updateChat(input)
-	local delta = input.Position - dragStart
-	local dragTime =  0.005   --0.055
-	local SmoothDrag = {}
-	SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	local dragSmoothFunction = gsTween:Create(fr, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
-	dragSmoothFunction:Play()
-end
-
-
 
 game:GetService("Players").PlayerAdded:connect(function(plr)
 	plr.Chatted:connect(function(chat)
@@ -451,7 +448,7 @@ end)
 		function updateInput(input)
 			local Delta = input.Position - dragStart
 			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(fr, TweenInfo.new(0.30), {Position = Position}):Play()
+			game:GetService("TweenService"):Create(fr, TweenInfo.new(0.25), {Position = Position}):Play()
 		end
 		fr.InputBegan:Connect(function(input)
 			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
@@ -1546,6 +1543,11 @@ local NewTextBoxx = Instance.new("TextBox")
                             end
                             toggled = not toggled
                             pcall(callback, toggled)
+							if toggled == true then
+Notify("Succes",tname.." enabled!","Green",5)
+                                    else
+Notify("Succes",tname.." disabled!","Green",5)
+							end
                         else
                             for i,v in next, infoContainer:GetChildren() do
                                 Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
