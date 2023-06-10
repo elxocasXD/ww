@@ -1,5 +1,4 @@
---lol
-
+--xD
 loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/scripts/main/Status.lua"))()
 
 if getgenv().UI_Library_Free_Enable == true then
@@ -580,6 +579,7 @@ ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
 ImageButtonx.Size = UDim2.new(0, 100, 0, 100)
 ImageButtonx.Image = "http://www.roblox.com/asset/?id=12756283803"
 ImageButtonx.Active = true
+ImageButtonx.ImageColor3 = themeList.SchemeColor
 ImageButtonx.Draggable = true
 ImageButtonx.MouseButton1Click:Connect(function()
 game.CoreGui[LibName].Frame.Visible = false
