@@ -4,13 +4,6 @@ if getgenv().UI_Library_Free_Enable == true then
 	getgenv().Library_Free_Name = "Trip Hub"
 local Kavo = {}
 
-local notificationss = loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/ww/main/nwnwnwwnwnnwwnwnwnnwnwnwnnwnwnwn'))()
-function Notify(Title,Description,Color,Length)
-notificationss:notify{Title = Title, Description = Description,Icon = "",Color = Color,Length = Length}
-end
-
-
-
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
@@ -208,11 +201,11 @@ SchemeColor = Color3.fromRGB(50,60,177,255), --section
     },
 
 Purple = {
-SchemeColor = Color3.fromRGB(100,70,255), --section 100,70,255
-    Background = Color3.fromRGB(22,22,22), --fondo
-    Header = Color3.fromRGB(25,23,26), --tabs 27,25,25
+SchemeColor = Color3.fromRGB(106,106,255,255), --section
+    Background = Color3.fromRGB(20,20,20), --fondo
+    Header = Color3.fromRGB(25,23,26,255), --tabs
     TextColor = Color3.fromRGB(215,215,215), --text
-    ElementColor = Color3.fromRGB(26,26,30) --buttons
+    ElementColor = Color3.fromRGB(24,24,24,255) --buttons
     },
 
 Beautifull = {
@@ -408,17 +401,9 @@ elseif themeList == "OperaGx" then
     Main.Parent = ScreenGui
     Main.BackgroundColor3 = themeList.Background
     Main.ClipsDescendants = true
-    Main.Position = UDim2.new(0, 0, 0, 0)
+    Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
     Main.Size = UDim2.new(0, 610, 0, 359)
     Main.Visible = true
-
-
-	local function centrarMain()
-		Main.Position = UDim2.new(0.5, -Main.AbsoluteSize.X/2, 0.5, -Main.AbsoluteSize.Y/2)
-	end
-	centrarMain()
-	Main:GetPropertyChangedSignal("AbsoluteSize"):Connect(centrarMain)
-
 
 local UserInputService = game:GetService("UserInputService")
 local dragging
@@ -427,6 +412,16 @@ local dragStart
 local startPos
 
 local fr = Main
+
+local function updateChat(input)
+	local delta = input.Position - dragStart
+	local dragTime =  0.005   --0.055
+	local SmoothDrag = {}
+	SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	local dragSmoothFunction = gsTween:Create(fr, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+	dragSmoothFunction:Play()
+end
+
 
 
 game:GetService("Players").PlayerAdded:connect(function(plr)
@@ -448,7 +443,7 @@ end)
 		function updateInput(input)
 			local Delta = input.Position - dragStart
 			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
-			game:GetService("TweenService"):Create(fr, TweenInfo.new(0.25), {Position = Position}):Play()
+			game:GetService("TweenService"):Create(fr, TweenInfo.new(0.30), {Position = Position}):Play()
 		end
 		fr.InputBegan:Connect(function(input)
 			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
@@ -496,10 +491,10 @@ local Logo = Instance.new("ImageLabel")
 	Logo.Name = "Logo"
     Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Logo.BackgroundTransparency = 5.000
+    Logo.ImageColor3 = themeList.SchemeColor
     Logo.Position = UDim2.new(0, 305, 0, -5)
     Logo.Size = UDim2.new(0, 50, 0, 50)
-    Logo.Image = "http://www.roblox.com/asset/?id=13025304399"
-
+    Logo.Image = "http://www.roblox.com/asset/?id=12756283803"
 
     title.Name = "title"
     title.Parent = MainHeader
@@ -570,24 +565,18 @@ local UICorner = Instance.new("UICorner")
 
 FrameW.Parent = game.CoreGui[LibName]
 FrameW.BackgroundColor3 = themeList.Header
-FrameW.BackgroundTransparency = 1
-FrameW.Position = UDim2.new(0, 0, 0, 0)
-FrameW.Size = UDim2.new(0, 90, 0, 90)
+FrameW.BackgroundTransparency = 1.00
+FrameW.Position = Main.Position
+FrameW.Size = UDim2.new(0, 120, 0, 120)
 FrameW.Visible = false
-
-local function centrarFrame()
-    FrameW.Position = UDim2.new(0.5, -FrameW.AbsoluteSize.X/2, 0.5, -FrameW.AbsoluteSize.Y/2)
-end
-centrarFrame()
-FrameW:GetPropertyChangedSignal("AbsoluteSize"):Connect(centrarFrame)
 
 local ImageButtonx = Instance.new("ImageButton")
 ImageButtonx.Parent = FrameW
 ImageButtonx.BackgroundColor3 = themeList.Header
 ImageButtonx.BackgroundTransparency = 0.000
 ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
-ImageButtonx.Size = UDim2.new(0, 75, 0, 75)
-ImageButtonx.Image = "http://www.roblox.com/asset/?id=13025304399"
+ImageButtonx.Size = UDim2.new(0, 100, 0, 100)
+ImageButtonx.Image = "http://www.roblox.com/asset/?id=12756283803"
 ImageButtonx.Active = true
 ImageButtonx.Draggable = true
 ImageButtonx.MouseButton1Click:Connect(function()
@@ -1543,11 +1532,6 @@ local NewTextBoxx = Instance.new("TextBox")
                             end
                             toggled = not toggled
                             pcall(callback, toggled)
-							if toggled == true then
-Notify("Succes",tname.." enabled!","Green",5)
-                                    else
-Notify("Succes",tname.." disabled!","Green",5)
-							end
                         else
                             for i,v in next, infoContainer:GetChildren() do
                                 Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
@@ -3057,7 +3041,6 @@ Notify("Succes",tname.." disabled!","Green",5)
 	end
     return Tabs
 end
-
 
 return Kavo
 
