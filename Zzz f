@@ -1,3 +1,4 @@
+---
 loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/scripts/main/Status.lua"))()
 
 if getgenv().UI_Library_Free_Enable == true then
