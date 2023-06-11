@@ -1,4 +1,3 @@
----
 loadstring(game:HttpGet("https://raw.githubusercontent.com/elxocasXD/scripts/main/Status.lua"))()
 
 if getgenv().UI_Library_Free_Enable == true then
@@ -500,7 +499,7 @@ local Logo = Instance.new("ImageLabel")
     Logo.Position = UDim2.new(0, 305, 0, -5)
     Logo.Size = UDim2.new(0, 50, 0, 50)
     Logo.ImageColor3 = themeList.SchemeColor
-    Logo.Image = "http://www.roblox.com/asset/?id=13025304399"
+    Logo.Image = "http://www.roblox.com/asset/?id=13721379802"
 
 
     title.Name = "title"
@@ -589,7 +588,7 @@ ImageButtonx.BackgroundColor3 = themeList.Header
 ImageButtonx.BackgroundTransparency = 0.000
 ImageButtonx.Position = UDim2.new(0.13, 0, 0.1, 0)
 ImageButtonx.Size = UDim2.new(0, 75, 0, 75)
-ImageButtonx.Image = "http://www.roblox.com/asset/?id=13025304399"
+ImageButtonx.Image = "http://www.roblox.com/asset/?id=13721379802"
 ImageButtonx.Active = true
 ImageButtonx.ImageColor3 = themeList.SchemeColor
 ImageButtonx.Draggable = true
