@@ -208,11 +208,11 @@ SchemeColor = Color3.fromRGB(50,60,177,255), --section
     },
 
 Purple = {
-SchemeColor = Color3.fromRGB(100,70,255), --section 100,70,255
-    Background = Color3.fromRGB(22,22,22), --fondo
-    Header = Color3.fromRGB(25,23,26), --tabs 27,25,25
+SchemeColor = Color3.fromRGB(100,75,255), --section 100,70,255
+    Background = Color3.fromRGB(22,22,25), --fondo
+    Header = Color3.fromRGB(19,19,23), --tabs 27,25,25
     TextColor = Color3.fromRGB(215,215,215), --text
-    ElementColor = Color3.fromRGB(26,26,30) --buttons
+    ElementColor = Color3.fromRGB(28,28,32) --buttons
     },
 
 Beautifull = {
@@ -476,7 +476,7 @@ end)
 	dragify(script.Parent)
 
 	
-    MainCorner.CornerRadius = UDim.new(0, 6)
+    MainCorner.CornerRadius = UDim.new(0, 8)
     MainCorner.Name = "MainCorner"
     MainCorner.Parent = Main
 
@@ -487,9 +487,13 @@ end)
     Objects[MainHeader] = "BackgroundColor3"
     MainHeader.Size = UDim2.new(0, 610, 0, 40)
 
-    headerCover.CornerRadius = UDim.new(0, 1)
+    headerCover.CornerRadius = UDim.new(0, 8)
     headerCover.Name = "headerCover"
     headerCover.Parent = MainHeader
+
+    sideCorner.CornerRadius = UDim.new(0, 8)
+    sideCorner.Name = "sideCorner"
+    sideCorner.Parent = MainSide
 
 local Logo = Instance.new("ImageLabel")
     Logo.Parent = MainHeader
@@ -613,14 +617,10 @@ UICorner.Parent = ImageButtonx
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0, 40)
-    MainSide.Size = UDim2.new(0, 180, 0, 326)
+    MainSide.Size = UDim2.new(0, 180, 0, 320)
 --158
 
 
-
-    sideCorner.CornerRadius = UDim.new(0, 4)
-    sideCorner.Name = "sideCorner"
-    sideCorner.Parent = MainSide
 
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide
@@ -3060,8 +3060,8 @@ Notify("Succes",tname.." disabled!","Green",5)
     return Tabs
 end
 
-
 return Kavo
 
 
 end  --Free Status
+
