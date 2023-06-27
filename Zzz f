@@ -1548,7 +1548,7 @@ local NewTextBoxx = Instance.new("TextBox")
 							if toggled == true then
 Notify("Succes",tname.." enabled!","Green",5)
                                     else
-Notify("Succes",tname.." disabled!","Green",5)
+Notify("Succes",tname.." disabled!","Red",5)
 							end
                         else
                             for i,v in next, infoContainer:GetChildren() do
@@ -3060,8 +3060,7 @@ Notify("Succes",tname.." disabled!","Green",5)
     return Tabs
 end
 
+
 return Kavo
 
-
 end  --Free Status
-
