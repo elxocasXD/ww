@@ -62,7 +62,13 @@ local notifications = {
 			SecondaryText = Color3.fromRGB(255, 255, 255),
 			Accept = Color3.fromRGB(60, 40, 200),
 			Dismiss = Color3.fromRGB(60, 60, 65),
-			Iconrbx = "rbxassetid://6031071053"
+			Iconrbx = "rbxassetid://6031071053",
+			
+			IconRedSize = UDim2.fromOffset(50, 50),
+			IconGreenSize = UDim2.fromOffset(40, 40),
+			
+			IconRedPosition = UDim2.new(0, -1, 0.34, 0),
+			IconGreenPosition = UDim2.new(0, 5, 0.34, 0),
 		}
 	},
 	closeOpened = nil
@@ -79,13 +85,21 @@ function notifications:notify(options)
 		self.closeOpened()
 	end
 
+local IconSizeW = nil
+local IconPositionW = nil
+
+
 if options.Color then
 if options.Color == "Green" then
-notifications.colorSchemes.dark.Main = Color3.fromRGB(70, 215, 70)
-notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253415755" 
+notifications.colorSchemes.dark.Main = Color3.fromRGB(67,185,109)
+notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13875091778" 
+IconSizeW = notifications.colorSchemes.dark.IconGreenSize
+IconPositionW = notifications.colorSchemes.dark.IconGreenPosition
 elseif options.Color == "Red" then
-notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 70, 70) 
-notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253418592"
+notifications.colorSchemes.dark.Main = Color3.fromRGB(179,20,0) 
+notifications.colorSchemes.dark.Iconrbx = "rbxassetid://13875217955"
+IconSizeW = notifications.colorSchemes.dark.IconRedSize
+IconPositionW = notifications.colorSchemes.dark.IconRedPosition
 elseif options.Color == "Yellow" then
 notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 215, 70) 
 notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253417116"
@@ -94,6 +108,7 @@ notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45)
 notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
 end
 end
+
 
 	local mainFrame = gui:object("Frame", {
 		Size = UDim2.fromOffset(400, (callbacksBool and 100) or 56),
@@ -114,16 +129,18 @@ end
 		BackgroundTransparency = 1,
 		ImageColor3 = theme.Icon,
 		AnchorPoint = Vector2.new(0, 0.5),
-		Position = UDim2.new(0, 15, 0.5, 0),
-		Size = UDim2.fromOffset(30, 30),
-		ImageTransparency = 1
+		Position = IconPositionW ,
+		ImageTransparency = 1,
+        Size = IconSizeW
 	})
+
+
 
 	local title = content:object("TextLabel", {
 		TextColor3 = theme.Text,
 		Font = Enum.Font.ArialBold,
 		TextSize = 18,
-		Position = UDim2.fromOffset(60, 10),
+		Position = UDim2.fromOffset(42, 10),
 		Size = UDim2.new(1, -70, 0, 18),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		BackgroundTransparency = 1,
@@ -139,7 +156,7 @@ end
 			TextColor3 = theme.SecondaryText,
 			Font = Enum.Font.SourceSans,
 			TextSize = 18,
-			Position = UDim2.new(0, 60, 1, -10),
+			Position = UDim2.new(0, 42, 1, -10),
 			Size = UDim2.new(1, -70, 1, 0),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			BackgroundTransparency = 1,
