@@ -87,7 +87,8 @@ function notifications:notify(options)
 
 local IconSizeW = nil
 local IconPositionW = nil
-
+local TitlePosition = nil
+local DescriptionPosition = nil
 
 if options.Color then
 if options.Color == "Green" then
@@ -95,20 +96,25 @@ notifications.colorSchemes.dark.Main = Color3.fromRGB(67,185,109)
 notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13875091778" 
 IconSizeW = notifications.colorSchemes.dark.IconGreenSize
 IconPositionW = notifications.colorSchemes.dark.IconGreenPosition
-elseif options.Color == "Red" then
-notifications.colorSchemes.dark.Main = Color3.fromRGB(179,20,0) 
-notifications.colorSchemes.dark.Iconrbx = "rbxassetid://13875217955"
-IconSizeW = notifications.colorSchemes.dark.IconRedSize
-IconPositionW = notifications.colorSchemes.dark.IconRedPosition
-elseif options.Color == "Yellow" then
-notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 215, 70) 
-notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253417116"
+
+TitlePosition = UDim2.fromOffset(70, 10)
+DescriptionPosition = UDim2.new(0, 42, 1, -10)
+
 elseif options.Color == "Dark" then
 notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45) 
 notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
+IconPositionW = UDim2.new(0, 15, 0.5, 0)
+
+TitlePosition = UDim2.fromOffset(60, 10)
+DescriptionPosition = UDim2.new(0, 60, 1, -10)
+
 else
 notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45) 
 notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
+IconPositionW = UDim2.new(0, 15, 0.5, 0)
+
+TitlePosition = UDim2.fromOffset(60, 10)
+DescriptionPosition = UDim2.new(0, 60, 1, -10)
 end
 end
 
@@ -141,9 +147,9 @@ end
 
 	local title = content:object("TextLabel", {
 		TextColor3 = theme.Text,
-		Font = Enum.Font.ArialBold,
+		Font = Enum.Font.SourceSansSemibold,
 		TextSize = 18,
-		Position = UDim2.fromOffset(42, 10),
+		Position = TitlePosition,
 		Size = UDim2.new(1, -70, 0, 18),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		BackgroundTransparency = 1,
@@ -159,7 +165,7 @@ end
 			TextColor3 = theme.SecondaryText,
 			Font = Enum.Font.SourceSans,
 			TextSize = 18,
-			Position = UDim2.new(0, 42, 1, -10),
+			Position = DescriptionPosition,
 			Size = UDim2.new(1, -70, 1, 0),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			BackgroundTransparency = 1,
