@@ -103,6 +103,9 @@ IconPositionW = notifications.colorSchemes.dark.IconRedPosition
 elseif options.Color == "Yellow" then
 notifications.colorSchemes.dark.Main = Color3.fromRGB(215, 215, 70) 
 notifications.colorSchemes.dark.Iconrbx = "http://www.roblox.com/asset/?id=13253417116"
+elseif options.Color == "Dark"
+notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45) 
+notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
 else
 notifications.colorSchemes.dark.Main = Color3.fromRGB(40, 40, 45) 
 notifications.colorSchemes.dark.Iconrbx = "rbxassetid://6031071053"
